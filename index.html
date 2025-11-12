@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
         
         * {
             margin: 0;
@@ -154,8 +154,8 @@
         
         .logo-container {
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
             animation: float 4s ease-in-out infinite;
         }
         
@@ -222,36 +222,6 @@
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
         }
         
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            cursor: pointer;
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            align-items: flex-end;
-            padding: 20px;
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        
-        .gallery-item img {
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
         .input-field {
             transition: all 0.3s ease;
             border: 2px solid transparent;
@@ -298,10 +268,187 @@
             transform: rotateY(360deg);
         }
         
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 150px;
+            color: rgba(102, 126, 234, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 20px;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        
+        .donation-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .donation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+        
+        .donation-card.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+        }
+        
+        .currency-input {
+            position: relative;
+        }
+        
+        .currency-input::before {
+            content: 'TND';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .currency-input input {
+            padding-left: 60px;
+        }
+        
+        .impact-item {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .impact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.1);
+        }
+        
         @media (max-width: 768px) {
             .blob {
                 display: none;
             }
+        }
+        
+        .dark-mode {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        
+        .dark-mode .bg-white {
+            background-color: #2d3748;
+        }
+        
+        .dark-mode .text-gray-800 {
+            color: #e2e8f0;
+        }
+        
+        .dark-mode .text-gray-600 {
+            color: #cbd5e0;
+        }
+        
+        .dark-mode .bg-gray-50 {
+            background-color: #2d3748;
+        }
+        
+        .dark-mode .input-field {
+            background-color: #4a5568;
+            color: #e2e8f0;
+        }
+        
+        .dark-mode .testimonial-card {
+            background-color: #2d3748;
+            color: #e2e8f0;
+        }
+        
+        .dark-mode .stat-card {
+            background-color: #2d3748;
+            color: #e2e8f0;
+        }
+        
+        .dark-mode .team-card {
+            background-color: #2d3748;
+            color: #e2e8f0;
+        }
+        
+        .dark-mode .donation-card {
+            background-color: #2d3748;
+            color: #e2e8f0;
         }
     </style>
 </head>
@@ -311,7 +458,7 @@
         <div class="container mx-auto">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-3">
-                    <img src="adli.jfif" alt="YouthRise Tunisia" class="w-12 h-12 rounded-full object-cover">
+                    <img src="adli.jfif" alt="YouthRise Tunisia" class="w-12 h-12 rounded-full object-cover border-2 border-white">
                     <span class="text-xl font-bold text-white">YouthRise Tunisia</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
@@ -319,12 +466,18 @@
                     <a href="#about" class="nav-link text-white hover:text-purple-200 transition">About</a>
                     <a href="#achievements" class="nav-link text-white hover:text-purple-200 transition">Achievements</a>
                     <a href="#programs" class="nav-link text-white hover:text-purple-200 transition">Programs</a>
-                    <a href="#gallery" class="nav-link text-white hover:text-purple-200 transition">Gallery</a>
+                    <a href="#testimonials" class="nav-link text-white hover:text-purple-200 transition">Testimonials</a>
+                    <a href="#donate" class="nav-link text-white hover:text-purple-200 transition">Donate</a>
                     <a href="#contact" class="nav-link text-white hover:text-purple-200 transition">Contact</a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden text-white">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="text-white hover:text-purple-200 transition">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="md:hidden text-white">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
         <!-- Mobile Menu -->
@@ -333,7 +486,8 @@
             <a href="#about" class="block py-2 text-white hover:text-purple-200 transition">About</a>
             <a href="#achievements" class="block py-2 text-white hover:text-purple-200 transition">Achievements</a>
             <a href="#programs" class="block py-2 text-white hover:text-purple-200 transition">Programs</a>
-            <a href="#gallery" class="block py-2 text-white hover:text-purple-200 transition">Gallery</a>
+            <a href="#testimonials" class="block py-2 text-white hover:text-purple-200 transition">Testimonials</a>
+            <a href="#donate" class="block py-2 text-white hover:text-purple-200 transition">Donate</a>
             <a href="#contact" class="block py-2 text-white hover:text-purple-200 transition">Contact</a>
         </div>
     </nav>
@@ -347,7 +501,10 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
-                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                    <div class="inline-block px-4 py-2 bg-white/20 backdrop-blur-md rounded-full mb-6">
+                        <span class="text-white font-semibold">🚀 Empowering Tunisian Youth Since 2020</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                         YouthRise <span class="text-yellow-300">Tunisia</span>
                     </h1>
                     <h2 class="text-3xl md:text-4xl mb-6 text-white font-light">
@@ -356,19 +513,28 @@
                     <p class="text-xl text-white/90 mb-8 leading-relaxed">
                         Promoting decent work and economic growth (SDG 8) by empowering Tunisian youth with essential skills for employment and entrepreneurship.
                     </p>
-                    <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-wrap gap-4 mb-8">
                         <a href="#about" class="btn-gradient text-white px-8 py-4 rounded-full font-semibold text-lg">
                             Learn More <i class="fas fa-arrow-right ml-2"></i>
                         </a>
-                        <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-purple-600 transition">
-                            Get Involved
+                        <a href="#donate" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-purple-600 transition">
+                            Donate Now
                         </a>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <div class="flex -space-x-2">
+                            <img src="https://picsum.photos/seed/person1/40/40.jpg" alt="Person" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://picsum.photos/seed/person2/40/40.jpg" alt="Person" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://picsum.photos/seed/person3/40/40.jpg" alt="Person" class="w-10 h-10 rounded-full border-2 border-white">
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-purple-600 flex items-center justify-center text-white text-sm font-bold">+500</div>
+                        </div>
+                        <p class="text-white">Youth already empowered</p>
                     </div>
                 </div>
                 <div class="flex justify-center">
                     <div class="logo-container">
                         <div class="logo-glow"></div>
-                        <img src="adli.jfif" alt="YouthRise Tunisia Logo" class="relative z-10 w-full h-full object-cover rounded-full shadow-2xl">
+                        <img src="adli.jfif" alt="YouthRise Tunisia Logo" class="relative z-10 w-full h-full object-cover rounded-full shadow-2xl border-4 border-white">
                     </div>
                 </div>
             </div>
@@ -380,7 +546,7 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="section-title text-4xl md:text-5xl font-bold gradient-text mb-4">About YouthRise Tunisia</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Empowering the next generation of Tunisian leaders</p>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Empowering next generation of Tunisian leaders</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -391,14 +557,14 @@
                     <div class="mb-8">
                         <h3 class="text-3xl font-bold text-gray-800 mb-4">Our Mission</h3>
                         <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                            YouthRise Tunisia is dedicated to empowering Tunisian youth with the skills they need to succeed in today's competitive job market. We focus on promoting decent work and economic growth in alignment with Sustainable Development Goal 8 (SDG 8).
+                            YouthRise Tunisia is dedicated to empowering Tunisian youth with skills they need to succeed in today's competitive job market. We focus on promoting decent work and economic growth in alignment with Sustainable Development Goal 8 (SDG 8).
                         </p>
                     </div>
                     
                     <div class="mb-8">
                         <h3 class="text-3xl font-bold text-gray-800 mb-4">Our Vision</h3>
                         <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                            We envision a Tunisia where every young person has access to quality education, decent work opportunities, and the resources needed to build a successful future.
+                            We envision a Tunisia where every young person has access to quality education, decent work opportunities, and resources needed to build a successful future.
                         </p>
                     </div>
                     
@@ -427,28 +593,46 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl shadow-xl p-8 text-center card-hover">
+                <div class="stat-card text-center">
                     <div class="feature-icon mx-auto mb-6">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3 class="text-5xl font-bold gradient-text mb-3 counter">500+</h3>
                     <p class="text-gray-600 text-lg font-medium">Youth Professionally Trained</p>
+                    <div class="mt-4">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">85% of our annual goal</p>
+                    </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl shadow-xl p-8 text-center card-hover">
+                <div class="stat-card text-center">
                     <div class="feature-icon mx-auto mb-6">
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <h3 class="text-5xl font-bold gradient-text mb-3 counter">200+</h3>
                     <p class="text-gray-600 text-lg font-medium">Youth Successfully Employed</p>
+                    <div class="mt-4">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%;"></div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">70% employment rate</p>
+                    </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl shadow-xl p-8 text-center card-hover">
+                <div class="stat-card text-center">
                     <div class="feature-icon mx-auto mb-6">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3 class="text-5xl font-bold gradient-text mb-3 counter">50+</h3>
                     <p class="text-gray-600 text-lg font-medium">Startups Supported</p>
+                    <div class="mt-4">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%;"></div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">90% success rate</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -469,6 +653,9 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Skills Training</h3>
                     <p class="text-gray-600">Professional development programs to enhance employability skills and market readiness.</p>
+                    <div class="mt-4">
+                        <span class="inline-block px-3 py-1 bg-blue-500 text-white text-xs rounded-full">12 Courses</span>
+                    </div>
                 </div>
                 
                 <div class="feature-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 card-hover">
@@ -477,6 +664,9 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Job Placement</h3>
                     <p class="text-gray-600">Connecting youth with employment opportunities across various sectors and industries.</p>
+                    <div class="mt-4">
+                        <span class="inline-block px-3 py-1 bg-purple-500 text-white text-xs rounded-full">50+ Partners</span>
+                    </div>
                 </div>
                 
                 <div class="feature-card bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-6 card-hover">
@@ -485,6 +675,9 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Entrepreneurship</h3>
                     <p class="text-gray-600">Supporting young entrepreneurs with mentorship, funding, and business development resources.</p>
+                    <div class="mt-4">
+                        <span class="inline-block px-3 py-1 bg-pink-500 text-white text-xs rounded-full">8 Workshops</span>
+                    </div>
                 </div>
                 
                 <div class="feature-card bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 card-hover">
@@ -493,115 +686,227 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Economic Growth</h3>
                     <p class="text-gray-600">Initiatives to promote sustainable economic development and innovation in Tunisia.</p>
+                    <div class="mt-4">
+                        <span class="inline-block px-3 py-1 bg-orange-500 text-white text-xs rounded-full">5 Regions</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-gray-50" style="position: relative; z-index: 20;">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="section-title text-4xl md:text-5xl font-bold gradient-text mb-4">Gallery</h2>
-                <p class="text-gray-600 text-lg">Empowering Tunisian youth across the nation</p>
+                <h2 class="section-title text-4xl md:text-5xl font-bold gradient-text mb-4">Success Stories</h2>
+                <p class="text-gray-600 text-lg">Hear from youth we've empowered</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Tunisian Youth Training Session -->
-                <div class="gallery-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9d5xleUoy3OaW2-hBFMPjl0NtuwR48Nupi0S0VWQtLZNQS3wL_MwbBaULUbfqeGZF_S8&usqp=CAU" alt="Digital Skills Training in Tunis" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay">
-                        <div class="text-white">
-                            <h3 class="text-xl font-bold mb-2">Digital Skills Training</h3>
-                            <p class="text-sm">Youth learning programming in Tunis</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/testimonial1/60/60.jpg" alt="Testimonial" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Amina Ben Ali</h4>
+                            <p class="text-sm text-gray-600">Software Developer</p>
                         </div>
+                    </div>
+                    <p class="text-gray-600 italic">"YouthRise Tunisia gave me the skills and confidence to pursue my dream career in tech. The mentorship program was invaluable."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
                     </div>
                 </div>
                 
-                <!-- Sidi Bou Said Entrepreneurship Event -->
-                <div class="gallery-item">
-                    <img src="https://media.istockphoto.com/id/183429020/photo/a-stunning-pedestrians-view-of-tunis.jpg?s=612x612&w=0&k=20&c=SCxnLhpwZ8tISal9oKkOWgcApeK4SaXhbXtxX2AGJT0=" alt="Startup Event in Sidi Bou Said" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay">
-                        <div class="text-white">
-                            <h3 class="text-xl font-bold mb-2">Startup Pitch Event</h3>
-                            <p class="text-sm">Young entrepreneurs in Sidi Bou Said</p>
+                <div class="testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/testimonial2/60/60.jpg" alt="Testimonial" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Karim Toumi</h4>
+                            <p class="text-sm text-gray-600">Startup Founder</p>
                         </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The entrepreneurship program helped me turn my idea into a successful business. I'm now employing 5 other young Tunisians."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
                     </div>
                 </div>
                 
-                <!-- Job Fair in Tunis -->
-                <div class="gallery-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXw89AIlB5gOouJODxflH9EpqDvUFu32JZapxN9pqFNJeuyB_wke7eF_PwZgOeOUZWi2I&usqp=CAU" alt="Job Fair in Tunis" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay">
-                        <div class="text-white">
-                            <h3 class="text-xl font-bold mb-2">Annual Job Fair</h3>
-                            <p class="text-sm">Connecting graduates with employers in Tunis</p>
+                <div class="testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/testimonial3/60/60.jpg" alt="Testimonial" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sofia M'barek</h4>
+                            <p class="text-sm text-gray-600">Marketing Manager</p>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Mediterranean Coast Business Incubator -->
-                <div class="gallery-item">
-                    <img src="https://www.shutterstock.com/shutterstock/videos/1107395453/thumb/1.jpg?ip=x480" alt="Startup Hub on Mediterranean Coast" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay">
-                        <div class="text-white">
-                            <h3 class="text-xl font-bold mb-2">Coastal Innovation Hub</h3>
-                            <p class="text-sm">Mediterranean startup incubator program</p>
-                        </div>
+                    <p class="text-gray-600 italic">"After graduating, I struggled to find a job until I joined YouthRise Tunisia. The training and job placement support changed my life."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
                     </div>
                 </div>
-                
-                <!-- University of Tunis Career Workshop -->
-                <div class="gallery-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbgukQ87pnSQNRKgC1DfN8GbDP7TgppXbeQ&s" alt="Career Workshop at University of Tunis" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay">
-                        <div class="text-white">
-                            <h3 class="text-xl font-bold mb-2">University Career Workshop</h3>
-                            <p class="text-sm">Professional development at University of Tunis</p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Donate Section -->
+    <section id="donate" class="py-20 bg-white" style="position: relative; z-index: 20;">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold gradient-text mb-4">Support Our Mission</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Your donation helps empower Tunisian youth with the skills they need to build a brighter future</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Make a Difference Today</h3>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Every contribution, no matter the size, makes a real impact on the lives of Tunisian youth. Your support helps us provide training, mentorship, and opportunities for young people across Tunisia.
+                    </p>
+                    
+                    <!-- Donation Amounts -->
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-4">Choose Your Impact Level</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="donation-card text-center p-4 cursor-pointer" onclick="selectDonation(50, this)">
+                                <div class="text-2xl font-bold text-purple-600 mb-2">TND 50</div>
+                                <p class="text-sm text-gray-600">Basic Support</p>
+                            </div>
+                            <div class="donation-card text-center p-4 cursor-pointer" onclick="selectDonation(100, this)">
+                                <div class="text-2xl font-bold text-purple-600 mb-2">TND 100</div>
+                                <p class="text-sm text-gray-600">Training Materials</p>
+                            </div>
+                            <div class="donation-card text-center p-4 cursor-pointer" onclick="selectDonation(250, this)">
+                                <div class="text-2xl font-bold text-purple-600 mb-2">TND 250</div>
+                                <p class="text-sm text-gray-600">Full Course</p>
+                            </div>
+                            <div class="donation-card text-center p-4 cursor-pointer" onclick="selectDonation(500, this)">
+                                <div class="text-2xl font-bold text-purple-600 mb-2">TND 500</div>
+                                <p class="text-sm text-gray-600">Mentorship Program</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Carthage Youth Leadership Summit -->
-                <div class="gallery-item">
-                    <img src="https://media.istockphoto.com/id/1437936265/photo/skyline-of-old-city-tunis-medina-in-tunisia-unesco-world-heritage-site-overlooking-al-zaytuna.jpg?s=612x612&w=0&k=20&c=kqb8XGCKm2EQi-7omVK0km0qxMtK-8BvpiB8KJWCBy8=" alt="Leadership Summit in Carthage" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay">
-                        <div class="text-white">
-                            <h3 class="text-xl font-bold mb-2">Leadership Summit</h3>
-                            <p class="text-sm">Youth leadership conference in Carthage</p>
+                    
+                    <!-- Custom Amount -->
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-4">Or Enter Custom Amount</h4>
+                        <div class="currency-input">
+                            <input type="number" id="custom-amount" class="input-field w-full px-4 py-3 rounded-xl" placeholder="Enter amount in TND" min="10" step="10">
                         </div>
                     </div>
+                    
+                    <!-- Donation Form -->
+                    <form id="donation-form" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                            <input type="text" class="input-field w-full px-4 py-3 rounded-xl" placeholder="Your full name" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" class="input-field w-full px-4 py-3 rounded-xl" placeholder="your@email.com" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Phone</label>
+                            <input type="tel" class="input-field w-full px-4 py-3 rounded-xl" placeholder="+216 XX XXX XXX" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Donation Type</label>
+                            <select class="input-field w-full px-4 py-3 rounded-xl" required>
+                                <option value="">Select donation type</option>
+                                <option value="one-time">One-time Donation</option>
+                                <option value="monthly">Monthly Recurring</option>
+                                <option value="annual">Annual Donation</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn-gradient w-full text-white font-bold py-4 rounded-xl text-lg">
+                            <i class="fas fa-heart mr-2"></i> Donate Now
+                        </button>
+                    </form>
                 </div>
                 
-                <!-- Sfax Tech Meetup -->
-                <div class="gallery-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUyULCOkcP0qkRnfiQcbSP9NMYenEjQnuD3g&s" alt="Tech Meetup in Sfax" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay">
-                        <div class="text-white">
-                            <h3 class="text-xl font-bold mb-2">Sfax Tech Meetup</h3>
-                            <p class="text-sm">Young tech enthusiasts networking event</p>
+                <div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Your Impact</h3>
+                    
+                    <!-- Impact Items -->
+                    <div class="space-y-4 mb-8">
+                        <div class="impact-item">
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-laptop"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">TND 50</h4>
+                                    <p class="text-gray-600">Provides internet access for one youth for a month of online learning</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">TND 100</h4>
+                                    <p class="text-gray-600">Covers training materials for one student in our skills program</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">TND 250</h4>
+                                    <p class="text-gray-600">Funds a complete certification course for one youth</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">TND 500</h4>
+                                    <p class="text-gray-600">Supports one youth through our complete mentorship program</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Kairouan Rural Youth Program -->
-                <div class="gallery-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBUwEEh43yZbLY8fr2YXWHqVbUAl0s4yLCdQ&s" alt="Rural Youth Program in Kairouan" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay">
-                        <div class="text-white">
-                            <h3 class="text-xl font-bold mb-2">Rural Empowerment</h3>
-                            <p class="text-sm">Skills training for youth in Kairouan</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Djerba Tourism Entrepreneurship -->
-                <div class="gallery-item">
-                    <img src="https://www.shutterstock.com/shutterstock/videos/1108853813/thumb/1.jpg?ip=x480" alt="Tourism Entrepreneurship in Djerba" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay">
-                        <div class="text-white">
-                            <h3 class="text-xl font-bold mb-2">Tourism Innovation</h3>
-                            <p class="text-sm">Young entrepreneurs in Djerba tourism sector</p>
+                    
+                    <!-- Payment Methods -->
+                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-2xl">
+                        <h4 class="font-bold text-gray-800 mb-4">Secure Payment Methods</h4>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="text-center p-3 bg-white rounded-lg">
+                                <i class="fas fa-credit-card text-2xl text-gray-600 mb-2"></i>
+                                <p class="text-sm text-gray-600">Credit Card</p>
+                            </div>
+                            <div class="text-center p-3 bg-white rounded-lg">
+                                <i class="fas fa-university text-2xl text-gray-600 mb-2"></i>
+                                <p class="text-sm text-gray-600">Bank Transfer</p>
+                            </div>
+                            <div class="text-center p-3 bg-white rounded-lg">
+                                <i class="fas fa-mobile-alt text-2xl text-gray-600 mb-2"></i>
+                                <p class="text-sm text-gray-600">Mobile Payment</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -610,7 +915,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white" style="position: relative; z-index: 20;">
+    <section id="contact" class="py-20 bg-gradient-to-br from-purple-50 to-blue-50" style="position: relative; z-index: 20;">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="section-title text-4xl md:text-5xl font-bold gradient-text mb-4">Get in Touch</h2>
@@ -686,7 +991,7 @@
                 </div>
                 
                 <div>
-                    <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl shadow-xl p-8">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
                         <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
                         <form id="contact-form">
                             <div class="mb-4">
@@ -795,6 +1100,42 @@
             }, 3000);
         });
 
+        // Donation form submission
+        document.getElementById('donation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Create success message
+            const successDiv = document.createElement('div');
+            successDiv.className = 'fixed top-24 right-6 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg z-50 fade-in';
+            successDiv.innerHTML = '<i class="fas fa-heart mr-2"></i> Thank you for your donation! Your generosity will make a real difference.';
+            document.body.appendChild(successDiv);
+            
+            // Reset form
+            this.reset();
+            document.querySelectorAll('.donation-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Remove success message after 3 seconds
+            setTimeout(() => {
+                successDiv.remove();
+            }, 3000);
+        });
+
+        // Select donation amount
+        function selectDonation(amount, element) {
+            // Remove selected class from all cards
+            document.querySelectorAll('.donation-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked card
+            element.classList.add('selected');
+            
+            // Set custom amount input
+            document.getElementById('custom-amount').value = amount;
+        }
+
         // Add scroll effect to navigation
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
@@ -823,26 +1164,35 @@
             observer.observe(el);
         });
 
-        // Gallery lightbox effect
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const img = this.querySelector('img');
-                const lightbox = document.createElement('div');
-                lightbox.className = 'fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4';
-                lightbox.innerHTML = `
-                    <img src="${img.src}" alt="${img.alt}" class="max-w-full max-h-full rounded-lg">
-                    <button class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300">
-                        <i class="fas fa-times"></i>
-                    </button>
-                `;
-                document.body.appendChild(lightbox);
-                
-                lightbox.addEventListener('click', function(e) {
-                    if (e.target === lightbox || e.target.closest('button')) {
-                        lightbox.remove();
-                    }
-                });
+        // Theme toggle
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const icon = this.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Progress bar animation
+        const progressBars = document.querySelectorAll('.progress-fill');
+        const progressObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = entry.target.style.width;
+                    entry.target.style.width = '0';
+                    setTimeout(() => {
+                        entry.target.style.width = width;
+                    }, 200);
+                }
             });
+        }, { threshold: 0.5 });
+
+        progressBars.forEach(bar => {
+            progressObserver.observe(bar);
         });
     </script>
 </body>
